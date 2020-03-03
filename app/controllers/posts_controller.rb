@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.valid?
       @post.save
       redirect_to post_path(@post)
